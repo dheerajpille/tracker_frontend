@@ -1,5 +1,46 @@
-.App {
-  text-align: center;
+html, body {
+    font-family: "Roboto", sans-serif;
+    padding: 1em 5em 1em 5em;
+    background: white;
+}
+
+.header {
+    color: deepskyblue;
+    font-style: italic;
+    margin: 0;
+    border-bottom: 0.025em solid royalblue;
+    border-bottom-left-radius: 1em;
+    display: block;
+}
+
+/* stroke */
+nav.stroke ul li a {
+    position: relative;
+}
+nav.stroke ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+.title {
+    float: left;
+    display: inline-block;
+}
+
+.navbar {
+    float: right;
+    display: inline-block;
 }
 
 .App-logo {
@@ -8,7 +49,8 @@
 }
 
 .App-header {
-  background-color: #01579b;
+     background-color: #01579b;
+    border-bottom-left-radius: 0.5em;
   padding: 1.5em;
   color: white;
 }
