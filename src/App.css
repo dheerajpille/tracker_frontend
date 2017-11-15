@@ -4,6 +4,26 @@ html, body {
     background: white;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+    max-width:100%;
+    max-height:100%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+p {
+    font-size: large;
+    width: 50em;
+}
+
+hr {
+    border-color: royalblue;
+}
+
 .header {
     margin: 0;
     padding-bottom: 5em;
@@ -11,29 +31,47 @@ html, body {
     display: block;
 }
 
+.banner-title {
+    font-size: 3vw;
+}
+
+.banner-subtitle {
+    font-size: 1.5vw;
+}
+
 .content {
     padding: 1em;
     background-color: ghostwhite;
     border-radius: 0.5em;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .title {
     color: deepskyblue;
     font-style: italic;
+    vertical-align: bottom;
     float: left;
 }
 .navbar {
     float: right;
+    display: table;
 }
 
-.navbar ul li {
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li h3{
     vertical-align: bottom;
+    display: table-cell;
+    background-color: darkblue;
+    color: white;
+    border-radius: 0.25em;
     padding-left: 1em;
-    display: inline-block;
-}
-
-.navbar ul li h3 {
-    border: 1px solid black;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 .App-logo {
