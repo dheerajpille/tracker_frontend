@@ -5,42 +5,35 @@ html, body {
 }
 
 .header {
-    color: deepskyblue;
-    font-style: italic;
     margin: 0;
-    border-bottom: 0.025em solid royalblue;
-    border-bottom-left-radius: 1em;
+    padding-bottom: 5em;
+    border-bottom: 0.05em solid royalblue;
     display: block;
 }
 
-/* stroke */
-nav.stroke ul li a {
-    position: relative;
-}
-nav.stroke ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: '.';
-    color: transparent;
-    background: #aaa;
-    height: 1px;
-}
-nav.stroke ul li a:hover:after {
-    width: 100%;
+.content {
+    padding: 1em;
+    background-color: ghostwhite;
+    border-radius: 0.5em;
 }
 
 .title {
+    color: deepskyblue;
+    font-style: italic;
     float: left;
+}
+.navbar {
+    float: right;
+}
+
+.navbar ul li {
+    vertical-align: bottom;
+    padding-left: 1em;
     display: inline-block;
 }
 
-.navbar {
-    float: right;
-    display: inline-block;
+.navbar ul li h3 {
+    border: 1px solid black;
 }
 
 .App-logo {
