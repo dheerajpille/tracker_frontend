@@ -20,8 +20,11 @@ class Home extends Component {
                 <br />
                 <div className="content">
                     <img src={banner} />
-                    <h1 class="banner-title">Spend less, track more</h1>
-                    <h3 class="banner-subtitle">Track your expenses with Tracker, and enjoy life a little more.</h3>
+                    <span>
+                        <h1 class="banner-title">Spend less, track more</h1>
+                        <br />
+                        <h3 class="banner-subtitle">Track your expenses with Tracker, and enjoy life.</h3>
+                    </span>
                     <hr />
                     <h2>Overview</h2>
                     <p>
@@ -31,7 +34,7 @@ class Home extends Component {
                         what you spent your money on.
                     </p>
                     <p>
-                        Simple and easy.
+                        Simple and easy. Just the way you'd like it.
                     </p>
                     <hr />
                     <h2>Details</h2>
