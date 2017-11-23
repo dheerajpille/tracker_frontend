@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import banner from './banner.png';
-import './App.css';
+import './Home.css';
 
 class Home extends Component {
     render() {
@@ -11,24 +11,13 @@ class Home extends Component {
                     <div className="title">
                         <h1>Tracker</h1>
                     </div>
-                    <div className="navbar">
-                        <ul>
-                            <li><h3><a>Login</a></h3></li>
-                        </ul>
-                    </div>
                 </div>
                 <br />
                 <div className="content">
-                    <img src={banner} />
-                    <span>
-                        <h1 class="banner-title">Spend less, track more</h1>
-                        <br />
-                        <h3 class="banner-subtitle">Track your expenses with Tracker, and enjoy life.</h3>
-                    </span>
-                    <hr />
+
                     <h2>Overview</h2>
                     <p>
-                        Tracker is a small-scale web application created to efficiently track your expenses. Now, you
+                        Tracker is a small-scale web `application created to efficiently track your expenses. Now, you
                         don't need to spend hours searching for bills or determining whether you surpassed your allotted
                         monthly budget on video games. Instead, just add your expenses to Tracker, and get a report on
                         what you spent your money on.
