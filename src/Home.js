@@ -9,12 +9,14 @@ class Home extends Component {
             <div>
                 <div className="header">
                     <div className="title">
+                        <img src={logo} />
                         <h1>Tracker</h1>
                     </div>
                 </div>
-                <br />
-                <div className="content">
 
+                <br />
+
+                <div className="content">
                     <h2>Overview</h2>
                     <p>
                         Tracker is a small-scale web `application created to efficiently track your expenses. Now, you

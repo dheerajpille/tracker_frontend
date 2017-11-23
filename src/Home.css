@@ -5,17 +5,21 @@ html, body {
 }
 
 h1 {
-    color: deepskyblue;
+    padding-left: 0.5em;
+    color: royalblue;
+    display: inline-block;
+}
+
+img {
+    display: inline-block;
 }
 
 .header {
     margin: 0;
-    border-bottom: 0.05em solid deepskyblue;
+    border-bottom: 0.1em solid royalblue;
     display: block;
 }
 
 .content {
-    padding: 1em 2.5em 1em 2.5em;
-    background-color: royalblue;
-    border-radius: 1em;
+
 }

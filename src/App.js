@@ -13,6 +13,7 @@ class App extends Component {
                 <h1>
                     Tracker
                 </h1>
+
                 <code>python manage.py makemigrations</code>
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
