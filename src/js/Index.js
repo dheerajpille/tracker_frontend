@@ -4,8 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 import logo from '../img/logo.svg';
 import '../css/Index.css';
 
-import Login from './Login'
-
 class Index extends Component {
     render() {
         return (
@@ -25,11 +23,11 @@ class Index extends Component {
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button><strong><Link to={Login} className="login">Log In</Link></strong></button>
+                    <button><strong><Link to='/login' className="link">Log In</Link></strong></button>
                 </div>
             </div>
         );
     }
 }
 
-export default withRouter(Index);
+export default Index;
