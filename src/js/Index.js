@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../img/logo.svg';
 import '../css/Index.css';
 import '@shopify/polaris/styles.css';
-import {DisplayText} from '@shopify/polaris';
 
 class Index extends Component {
     render() {
@@ -18,12 +17,12 @@ class Index extends Component {
                 </div>
                 <div className="content">
                     <div className="content-title">
-                        <h1><strong>Track more. Worry less.</strong></h1>
+                        <h1><span><strong>Track more. Worry less.</strong></span></h1>
                     </div>
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button>Log In</button>
+                    <button><strong>Log In</strong></button>
                 </div>
             </div>
         );
