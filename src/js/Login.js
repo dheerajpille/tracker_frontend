@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-
 import logo from '../img/logo.svg';
 import '../css/Index.css';
 
-import Login from './Login'
-
-class Index extends Component {
+class Login extends Component {
     render() {
         return (
             <div>
                 <div className="header">
-                        <div className="logo">
-                            <img src={logo} />
-                        </div>
-                        <div className="title">
-                            <h1>Tracker</h1>
-                        </div>
+                    <div className="logo">
+                        <img src={logo} />
+                    </div>
+                    <div className="title">
+                        <h1>Tracker</h1>
+                    </div>
                 </div>
                 <div className="content">
                     <div className="content-title">
@@ -25,11 +21,10 @@ class Index extends Component {
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button><strong><Link to={Login} className="login">Log In</Link></strong></button>
                 </div>
             </div>
         );
     }
 }
 
-export default withRouter(Index);
+export default Login;
