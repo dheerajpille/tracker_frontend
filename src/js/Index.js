@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../img/logo.svg';
 import '../css/Index.css';
-import '@shopify/polaris/styles.css';
 
 class Index extends Component {
     render() {

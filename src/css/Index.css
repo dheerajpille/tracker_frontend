@@ -1,6 +1,6 @@
 html, body {
     font-family: "Lato", sans-serif;
-    padding: 5em 15em 5em 15em;
+    padding: 1em 5em 1em 5em;
     background-color: #F4F5FA;
     color: #3E4155;
 }
@@ -31,15 +31,14 @@ button:hover {
 }
 
 .title {
-    padding-left: 0.25em;
+    padding-left: 0.5em;
     color: #5C6AC4;
-    font-size: 3em;
+    font-size: 1.25em;
     display: inline-block;
 }
 
 .header {
     border-bottom: 0.125em solid #5C6AC4;
-    padding-bottom: 1em;
 }
 
 .content {
@@ -47,8 +46,7 @@ button:hover {
 }
 
 .content-title {
-    padding: 1em;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 .content-body {
