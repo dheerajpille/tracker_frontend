@@ -1,11 +1,11 @@
 html, body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Lato", sans-serif;
     padding: 1em 5em 1em 5em;
     background: white;
 }
 
 h1 {
-    padding-left: 0.5em;
+    padding-left: 0.25em;
     color: royalblue;
     display: inline-block;
 }
@@ -20,6 +20,12 @@ img {
     display: block;
 }
 
-.content {
+.content-title {
+    font-size: 3em;
+    text-align: center;
+}
 
+.content-body {
+    font-size: 1.5em;
+    text-align: center;
 }
