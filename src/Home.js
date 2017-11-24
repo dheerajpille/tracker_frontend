@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Home.css';
 
+function LoginButton() {
+    return (
+        <button>Log In</button>
+    );
+}
+
 class Home extends Component {
     render() {
+        let loginButton = null;
+        loginButton = <LoginButton />;
         return (
             <div>
                 <div className="header">
@@ -18,9 +26,9 @@ class Home extends Component {
                         <h2>Track more. Worry less.</h2>
                     </div>
                     <div className="content-body">
-                        <h2>Waste no time finding your expenses.</h2>
-                        <p>Track with Tracker and preserve your sanity.</p>
-
+                        <p>Track your expenses with Tracker and enjoy life a little more.</p>
+                        <br />
+                        {loginButton}
                     </div>
                 </div>
             </div>
