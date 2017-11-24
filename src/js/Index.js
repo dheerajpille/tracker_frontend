@@ -1,39 +1,33 @@
 import React, { Component } from 'react';
 import logo from '../img/logo.svg';
-import '../css/Home.css';
+import '../css/Index.css';
+import '@shopify/polaris/styles.css';
+import {DisplayText} from '@shopify/polaris';
 
-function LoginButton() {
-    return (
-        <button>Log In</button>
-    );
-}
-
-class Home extends Component {
+class Index extends Component {
     render() {
-        let loginButton = null;
-        loginButton = <LoginButton />;
         return (
             <div>
                 <div className="header">
-                    <div className="title">
-                        <img src={logo} />
-                        <h1>Tracker</h1>
-                    </div>
+                        <div className="logo">
+                            <img src={logo} />
+                        </div>
+                        <div className="title">
+                            <h1>Tracker</h1>
+                        </div>
                 </div>
-                <br />
                 <div className="content">
                     <div className="content-title">
-                        <h2>Track more. Worry less.</h2>
+                        <h1><strong>Track more. Worry less.</strong></h1>
                     </div>
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
-                        <br />
-                        {loginButton}
                     </div>
+                    <button>Log In</button>
                 </div>
             </div>
         );
     }
 }
 
-export default Home;
+export default Index;

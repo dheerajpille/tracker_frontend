@@ -1,0 +1,50 @@
+html, body {
+    font-family: "Lato", sans-serif;
+    padding: 5em 15em 5em 15em;
+    background: #F4F5FA;
+    color: #3E4155;
+}
+
+button {
+    font-size: 2em;
+    padding: 0.25em 1em 0.25em 1em;
+    background-color: #F4F5FA;
+    border: 0.1em solid #202E78;
+    border-radius: 0.25em;
+    transition: 0.25s;
+}
+
+button:hover {
+    background-color: #202E78;
+    color: #F4F5FA;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.title {
+    padding-left: 0.5em;
+    color: #5C6AC4;
+    font-size: 3em;
+    display: inline-block;
+}
+
+.header {
+    border-bottom: 0.1em solid #5C6AC4;
+    padding-bottom: 1em;
+}
+
+.content {
+    text-align: center;
+}
+
+.content-title {
+    padding: 1em;
+    font-size: 4em;
+}
+
+.content-body {
+    font-size: 2em;
+    padding-bottom: 2em;
+}
