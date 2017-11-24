@@ -5,13 +5,10 @@ import '../css/Index.css';
 class Login extends Component {
     render() {
         return (
-            <div>
+            <div classID="login">
                 <div className="header">
-                    <div className="logo">
-                        <img src={logo} />
-                    </div>
                     <div className="title">
-                        <h1>Tracker</h1>
+                        <h1>Pokemon</h1>
                     </div>
                 </div>
                 <div className="content">

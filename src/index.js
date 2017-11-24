@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { Router, Route } from 'react-router';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 import Index from './js/Index';
 import Login from './js/Login'
 
-ReactDOM.render(
-    <BrowserRouter>
-        <div>
-            <Route path='/' component={Index} />
-            <Route path='/login/' component={Login} />
-        </div>
-    </BrowserRouter>,
-    document.getElementById('root')
-);
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <Switch>
+                    <Route path='/' exact component={Index} />,
+                    <Route path='/login/' exact component={Login} />
+                    <Route path='/*' exact component={Index} />
+                </Switch>
+            </BrowserRouter>
+        )
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

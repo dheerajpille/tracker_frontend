@@ -9,7 +9,7 @@ import Login from './Login'
 class Index extends Component {
     render() {
         return (
-            <div>
+            <div classID="index">
                 <div className="header">
                         <div className="logo">
                             <img src={logo} />
