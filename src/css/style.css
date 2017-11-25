@@ -34,9 +34,6 @@ button:hover {
     color: #F4F5FA;
 }
 
-label * {
-    padding: 0 0.5em 0 0.5em;
-}
 
 label {
     display: block;
@@ -49,7 +46,7 @@ input {
     padding: 1em;
     border: 0.1em solid #202E78;
     border-radius: 0.25em;
-    transition: 0.5s;
+    margin: 0 0.75em 0 0.75em;
 }
 
 input:focus {
