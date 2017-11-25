@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import logo from '../img/logo.svg';
-import '../css/Index.css';
+import '../css/style.css';
 
 class Index extends Component {
     render() {
         return (
-            <div classID="index">
+            <div>
                 <div className="header">
                         <div className="logo">
                             <img src={logo} />
@@ -23,7 +23,7 @@ class Index extends Component {
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button><strong><Link to='/login' className="link">Log In</Link></strong></button>
+                    <button><strong><Link to='/login' className="link">Log In to Tracker</Link></strong></button>
                 </div>
             </div>
         );
