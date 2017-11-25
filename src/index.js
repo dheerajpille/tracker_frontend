@@ -6,7 +6,8 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 import Index from './js/Index';
-import Login from './js/Login'
+import Login from './js/Login';
+import Signup from './js/Signup';
 
 class App extends Component {
     render() {
@@ -15,6 +16,7 @@ class App extends Component {
                 <Switch>
                     <Route path='/' exact component={Index} />,
                     <Route path='/login' exact component={Login} />
+                    <Route path='/signup' exact component={Signup} />
                     <Route path='/*' exact component={Index} />
                 </Switch>
             </BrowserRouter>
