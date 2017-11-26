@@ -55,6 +55,10 @@ input:focus {
     outline: none!important;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 10em #F4F5FA inset !important;
+}
+
 .logo {
     display: inline-block;
 }
