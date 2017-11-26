@@ -10,7 +10,7 @@ class Index extends Component {
             <div>
                 <div className="header">
                         <div className="logo">
-                            <img src={logo} />
+                            <img src={logo} alt={logo} />
                         </div>
                         <div className="title">
                             <h1>Tracker</h1>
