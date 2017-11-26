@@ -10,6 +10,8 @@ class Login extends Component {
     }
     handleLogin(e) {
         e.preventDefault();
+        sessionStorage['username'] = this.refs.username.value;
+        sessionStorage['password'] = this.refs.password.value;
         fetch("https://tracker-backend-heroku.herokuapp.com/login/",
             {
                 method: 'post',
@@ -23,12 +25,17 @@ class Login extends Component {
             }
         )
         .then(function(response) {
-            // The response is a Response instance.
-            // You parse the data into a useable format using `.json()`
+            console.log(response.status);
             return response.json();
         }).then(function(data) {
-            // `data` is the parsed version of the JSON returned from the above endpoint.
-            console.log(data);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+            if (data.username !== undefined || data.password !== undefined) {
+                console.log(data.username);
+                console.log(data.password);
+            } else {
+                console.log(data.non_field_errors);
+            }
+            console.log(sessionStorage['username']);
+            console.log(sessionStorage['password']);
         });
     }
     render() {
