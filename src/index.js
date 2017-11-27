@@ -17,9 +17,9 @@ class App extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path='/' exact component={Index} />,
-                    <Route path='/login' exact component={Login} />
-                    <Route path='/signup' exact component={Signup} />
-                    <Route path='/signup/redirect' exact component={SignupRedirect} />
+                    <Route path='/login/' exact component={Login} />
+                    <Route path='/signup/' exact component={Signup} />
+                    <Route path='/signup/redirect/' exact component={SignupRedirect} />
                     <Route path='/*' exact component={Index} />
                 </Switch>
             </BrowserRouter>

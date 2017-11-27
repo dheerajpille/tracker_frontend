@@ -35,7 +35,7 @@ class SignupRedirect extends Component {
                             <input type="password" ref="password" name="password" placeholder="password" />
                         </label>
                         <br />
-                        <button><strong><Link to='/login' className="link">Redirect to Login</Link></strong></button>
+                        <button><strong><Link to='/login/' className="link">Redirect to Login</Link></strong></button>
                     </form>
                 </div>
             </div>

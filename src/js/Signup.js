@@ -47,7 +47,7 @@ class Signup extends Component {
     }
     render() {
         if (this.state.redirect || sessionStorage['signupredirect']) {
-            return <Redirect push to='/signup/redirect' />
+            return <Redirect push to='/signup/redirect/' />
         }
         return (
             <div>
