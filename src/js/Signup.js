@@ -31,8 +31,9 @@ class Signup extends Component {
         )
         .then((response) => {
             if (response.status === 201) {
+                sessionStorage['signupredirect'] = true;
                 this.setState({redirect: true});
-        }
+            }
             return response.json();
         })
         .then((data) => {
@@ -45,8 +46,8 @@ class Signup extends Component {
         });
     }
     render() {
-        if (this.state.redirect) {
-            return <Redirect push to='/login' />
+        if (this.state.redirect || sessionStorage['signupredirect']) {
+            return <Redirect push to='/signup/redirect' />
         }
         return (
             <div>
