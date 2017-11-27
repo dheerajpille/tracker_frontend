@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import logo from '../img/logo.svg';
+import icon from '../img/icon.svg';
 import '../css/style.css';
 
 class Login extends Component {
@@ -65,8 +65,8 @@ class Login extends Component {
         return (
             <div>
                 <div className="header">
-                    <div className="logo">
-                        <img src={logo} alt={logo} />
+                    <div className="icon">
+                        <img src={icon} alt={icon} />
                     </div>
                     <div className="title">
                         <h1>Tracker</h1>

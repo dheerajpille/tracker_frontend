@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../img/logo.svg';
+import icon from '../img/icon.svg';
 import '../css/style.css';
 
 class Index extends Component {
@@ -9,8 +9,8 @@ class Index extends Component {
         return (
             <div>
                 <div className="header">
-                        <div className="logo">
-                            <img src={logo} alt={logo} />
+                        <div className="icon">
+                            <img src={icon} alt={icon} />
                         </div>
                         <div className="title">
                             <h1>Tracker</h1>

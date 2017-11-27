@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import { Route } from 'react-router';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
+import './index.css';
 import Index from './js/Index';
 import Login from './js/Login';
 import Signup from './js/Signup';

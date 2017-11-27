@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 
-import logo from '../img/logo.svg';
+import icon from '../img/icon.svg';
 import '../css/style.css';
 
 class Signup extends Component {
@@ -46,13 +46,13 @@ class Signup extends Component {
     }
     render() {
         if (this.state.redirect) {
-            return <div><p>LOL</p><Redirect push to='/login' /></div>
+            return <Redirect push to='/login' />
         }
         return (
             <div>
                 <div className="header">
-                    <div className="logo">
-                        <img src={logo} alt={logo} />
+                    <div className="icon">
+                        <img src={icon} alt={icon} />
                     </div>
                     <div className="title">
                         <h1>Tracker</h1>
