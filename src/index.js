@@ -9,6 +9,7 @@ import Index from './js/Index';
 import Login from './js/Login';
 import Signup from './js/Signup'
 import SignupRedirect from './js/SignupRedirect';
+import Dashboard from './js/Dashboard';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                     <Route path='/login/' exact component={Login} />
                     <Route path='/signup/' exact component={Signup} />
                     <Route path='/signup/redirect/' exact component={SignupRedirect} />
+                    <Route path='/dashboard/' exact component={Dashboard} />
                     <Route path='/*' exact component={Index} />
                 </Switch>
             </BrowserRouter>

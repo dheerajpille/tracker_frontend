@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
 import icon from '../img/icon.svg';
 import '../css/style.css';
@@ -6,6 +7,15 @@ import '../css/style.css';
 class Login extends Component {
     constructor(props) {
         super(props);
+        if (sessionStorage.login_redirect) {
+            this.state = {
+                redirect: true
+            };
+        } else {
+            this.state = {
+                redirect: false
+            };
+        }
         this.handleLogin = this.handleLogin.bind(this);
     }
     handleLogin(e) {
@@ -29,7 +39,7 @@ class Login extends Component {
         })
         .then(function(data) {
             if (data.username !== undefined || data.password !== undefined) {
-                // Check for error messages here
+                // TODO: check for errors
                 console.log(data.username);
                 console.log(data.password);
             } else {
@@ -50,18 +60,25 @@ class Login extends Component {
                 "grant_type=password"
             }
         )
-        .then(function (response) {
+        .then((response) => {
+            if (response.status === 200) {
+                sessionStorage['login_redirect'] = true;
+                this.setState({redirect: true});
+            }
             return response.json();
-        }).then(function (data) {
+        }).then((data) => {
             sessionStorage['token_type'] = data.token_type;
             sessionStorage['access_token'] = data.access_token;
             sessionStorage['refresh_token'] = data.refresh_token;
-            console.log(sessionStorage['token_type']);
-            console.log(sessionStorage['access_token']);
-            console.log(sessionStorage['refresh_token']);
+            delete sessionStorage['username'];
+            delete sessionStorage['password'];
+            console.log(sessionStorage)
         });
     }
     render() {
+        if (this.state.redirect) {
+            return <Redirect push to='/dashboard/' />
+        }
         return (
             <div>
                 <div className="header">

@@ -7,9 +7,15 @@ import '../css/style.css';
 class Signup extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            redirect: false
-        };
+        if (sessionStorage.signup_redirect) {
+            this.state = {
+                redirect: true
+            };
+        } else {
+            this.state = {
+                redirect: false
+            };
+        }
         this.handleSignup = this.handleSignup.bind(this);
     }
     handleSignup(e) {
@@ -33,7 +39,7 @@ class Signup extends Component {
             if (response.status === 201) {
                 sessionStorage['username'] = this.refs.username.value;
                 sessionStorage['email'] = this.refs.email.value;
-                sessionStorage['signupredirect'] = true;
+                sessionStorage['signup_redirect'] = true;
                 this.setState({redirect: true});
             }
             return response.json();
@@ -48,7 +54,7 @@ class Signup extends Component {
         });
     }
     render() {
-        if (this.state.redirect || sessionStorage['signupredirect']) {
+        if (this.state.redirect) {
             return <Redirect push to='/signup/redirect/' />
         }
         return (

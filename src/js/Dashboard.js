@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 import icon from '../img/icon.svg';
 import '../css/style.css';
 
-class SignupRedirect extends Component {
+class Dashboard extends Component {
     render() {
-        if (!sessionStorage['signup_redirect']) {
-            return (<div>404</div>);
-        }
         return (
             <div>
                 <div className="header">
@@ -21,18 +18,17 @@ class SignupRedirect extends Component {
                 </div>
                 <div className="content">
                     <div className="content-title">
-                        <h3><span><strong>Tracker Redirect</strong></span></h3>
+                        <h1><span><strong>Das AUTO</strong></span></h1>
                     </div>
                     <div className="content-body">
-                        <p>New User created!</p>
-                        <p><strong>username: </strong>{sessionStorage['username']}</p>
-                        <p><strong>email: </strong>{sessionStorage['email']}</p>
+                        <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button><strong><Link to='/login/' className="link">Redirect to Login</Link></strong></button>
+                    <button><strong><Link to='/login/' className="link">Log in to Tracker</Link></strong></button>
+                    <button><strong><Link to='/signup/' className="link">Sign up for Tracker</Link></strong></button>
                 </div>
             </div>
-         );
+        );
     }
 }
 
-export default SignupRedirect;
+export default Dashboard;
