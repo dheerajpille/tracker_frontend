@@ -53,7 +53,12 @@ class Login extends Component {
         .then(function (response) {
             return response.json();
         }).then(function (data) {
-            console.log(data);
+            sessionStorage['token_type'] = data.token_type;
+            sessionStorage['access_token'] = data.access_token;
+            sessionStorage['refresh_token'] = data.refresh_token;
+            console.log(sessionStorage['token_type']);
+            console.log(sessionStorage['access_token']);
+            console.log(sessionStorage['refresh_token']);
         });
     }
     render() {
