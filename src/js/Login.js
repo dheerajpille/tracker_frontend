@@ -28,33 +28,31 @@ class Login extends Component {
             return response.json();
         })
         .then(function(data) {
-            if (data.username === undefined || data.password === undefined) {
+            if (data.username !== undefined || data.password !== undefined) {
+                // Check for error messages here
                 console.log(data.username);
                 console.log(data.password);
             } else {
                 console.log(data.non_field_errors);
             }
-            console.log(sessionStorage['username']);
-            console.log(sessionStorage['password']);
         });
         fetch("https://tracker-backend-heroku.herokuapp.com/o/token/",
             {
                 method: 'post',
                 headers: {
-                    "Content-Type": "x-www-form-urlencoded"
+                    "Content-Type": "application/x-www-form-urlencoded"
                 },
-                body: JSON.stringify({
-                    "client_id": "iulHMYsNYKc9swHJvJlWvz8WMJWwbWbscF1OuUMr",
-                    "client_secret": "aOOzlyOQZW5GhSa8yQczlgzN9QcHeCDl5QSp7HTp2G587X5Y56jucR7wbblHYkS0dVoqULhAzhYTFhX46YL7aJ29qpCR3vkJOPwAM8ngPuNLsyzSh35wDHXGBNr7ZTDJ",
-                    "username": sessionStorage['username'],
-                    "password": sessionStorage['password'],
-                    "grant_type": "password"
-                })
+                body:
+                "client_id=iulHMYsNYKc9swHJvJlWvz8WMJWwbWbscF1OuUMr&" +
+                "client_secret=aOOzlyOQZW5GhSa8yQczlgzN9QcHeCDl5QSp7HTp2G587X5Y56jucR7wbblHYkS0dVoqULhAzhYTFhX46YL7aJ29qpCR3vkJOPwAM8ngPuNLsyzSh35wDHXGBNr7ZTDJ&" +
+                "username=" + sessionStorage['username'] + "&" +
+                "password=" + sessionStorage['password'] + "&" +
+                "grant_type=password"
             }
         )
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
-        }).then(function(data) {
+        }).then(function (data) {
             console.log(data);
         });
     }

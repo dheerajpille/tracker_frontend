@@ -4,6 +4,14 @@ import logo from '../img/logo.svg';
 import '../css/style.css';
 
 class Signup extends Component {
+    constructor(props) {
+        super(props);
+        this.handleLogin = this.handleLogin.bind(this);
+    }
+    handleSignup(e) {
+        e.preventDefault();
+        sessionStorage['first']
+    }
     render() {
         return (
             <div>
