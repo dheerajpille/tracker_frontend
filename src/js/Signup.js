@@ -10,12 +10,6 @@ class Signup extends Component {
     }
     handleSignup(e) {
         e.preventDefault();
-        if (!this.refs.first_name.value) {
-            this.refs.first_name.value = " ";
-        }
-        if (!this.refs.last_name.value.length) {
-            this.refs.last_name.value = " ";
-        }
         fetch("https://tracker-backend-heroku.herokuapp.com/signup/",
             {
                 method: 'post',
@@ -23,6 +17,8 @@ class Signup extends Component {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
+                    "first_name": this.refs.first_name.value,
+                    "last_name": this.refs.last_name.value,
                     "email": this.refs.email.value,
                     "username": this.refs.username.value,
                     "password": this.refs.password.value
