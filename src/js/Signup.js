@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
 import logo from '../img/logo.svg';
 import '../css/style.css';
@@ -6,6 +7,9 @@ import '../css/style.css';
 class Signup extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            redirect: false
+        };
         this.handleSignup = this.handleSignup.bind(this);
     }
     handleSignup(e) {
@@ -25,10 +29,13 @@ class Signup extends Component {
                 })
             }
         )
-        .then(function(response) {
+        .then((response) => {
+            if (response.status === 201) {
+                this.setState({redirect: true});
+        }
             return response.json();
         })
-        .then(function(data) {
+        .then((data) => {
             if (data.email !== undefined || data.username !== undefined || data.password !== undefined) {
                 console.log(data.email);
                 console.log(data.username);
@@ -38,6 +45,9 @@ class Signup extends Component {
         });
     }
     render() {
+        if (this.state.redirect) {
+            return <div><p>LOL</p><Redirect push to='/login' /></div>
+        }
         return (
             <div>
                 <div className="header">
