@@ -90,3 +90,7 @@ input:-webkit-autofill {
     color: inherit;
     text-decoration: none!important;
 }
+
+.redirect-content {
+    font-size: 0.875em;
+}
