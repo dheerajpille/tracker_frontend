@@ -6,11 +6,40 @@ import '../css/style.css';
 class Signup extends Component {
     constructor(props) {
         super(props);
-        this.handleLogin = this.handleLogin.bind(this);
+        this.handleSignup = this.handleSignup.bind(this);
     }
     handleSignup(e) {
         e.preventDefault();
-        sessionStorage['first']
+        if (!this.refs.first_name.value) {
+            this.refs.first_name.value = " ";
+        }
+        if (!this.refs.last_name.value.length) {
+            this.refs.last_name.value = " ";
+        }
+        fetch("https://tracker-backend-heroku.herokuapp.com/signup/",
+            {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": this.refs.email.value,
+                    "username": this.refs.username.value,
+                    "password": this.refs.password.value
+                })
+            }
+        )
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            if (data.email !== undefined || data.username !== undefined || data.password !== undefined) {
+                console.log(data.email);
+                console.log(data.username);
+                console.log(data.password);
+            }
+            console.log(data);
+        });
     }
     render() {
         return (
@@ -27,19 +56,19 @@ class Signup extends Component {
                     <div className="content-title">
                         <h3><span><strong>Tracker Sign Up</strong></span></h3>
                     </div>
-                    <form method="post">
+                    <form onSubmit={this.handleSignup}>
                         <label>
-                            <input type="text" name="first_name" placeholder="first_name" />
-                            <input type="text" name="last_name" placeholder="last_name" />
+                            <input type="text" ref="first_name" name="first_name" placeholder="first_name" />
+                            <input type="text" ref="last_name" name="last_name" placeholder="last_name" />
                         </label>
                         <br />
                         <label>
-                            <input type="text" name="email" placeholder="email" />
+                            <input type="text" ref="email" name="email" placeholder="email" />
                         </label>
                         <br />
                         <label>
-                            <input type="text" name="username" placeholder="username" />
-                            <input type="password" name="password" placeholder="password" />
+                            <input type="text" ref="username" name="username" placeholder="username" />
+                            <input type="password" ref="password" name="password" placeholder="password" />
                         </label>
                         <br />
                         <button type="submit"><strong>Sign Up</strong></button>
