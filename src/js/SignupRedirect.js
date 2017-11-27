@@ -25,8 +25,8 @@ class SignupRedirect extends Component {
                     </div>
                     <div className="content-body">
                         <p>Created new User with following credentials:</p>
-                        <p><strong>username: </strong><span dangerouslySetInnerHTML={{__html: sessionStorage['username']}} /></p>
-                        <p><strong>email: </strong><span dangerouslySetInnerHTML={{__html: sessionStorage['email']}} /></p>
+                        <p><strong>username: </strong>{sessionStorage['username']}</p>
+                        <p><strong>email: </strong>{sessionStorage['email']}</p>
                     </div>
                     <button><strong><Link to='/login/' className="link">Redirect to Login</Link></strong></button>
                 </div>
