@@ -31,6 +31,8 @@ class Signup extends Component {
         )
         .then((response) => {
             if (response.status === 201) {
+                sessionStorage['username'] = this.refs.username.value;
+                sessionStorage['email'] = this.refs.email.value;
                 sessionStorage['signupredirect'] = true;
                 this.setState({redirect: true});
             }

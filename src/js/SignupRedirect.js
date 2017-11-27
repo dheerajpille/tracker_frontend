@@ -6,6 +6,9 @@ import '../css/style.css';
 
 class SignupRedirect extends Component {
     render() {
+        if (!sessionStorage['signupredirect']) {
+            return (<div>404</div>);
+        }
         return (
             <div>
                 <div className="header">
@@ -20,26 +23,13 @@ class SignupRedirect extends Component {
                     <div className="content-title">
                         <h3><span><strong>Tracker Redirect</strong></span></h3>
                     </div>
-                    <form>
-                        <label>
-                            <input type="text" ref="first_name" name="first_name" placeholder="first_name" />
-                            <input type="text" ref="last_name" name="last_name" placeholder="last_name" />
-                        </label>
-                        <br />
-                        <label>
-                            <input type="text" ref="email" name="email" placeholder="email" />
-                        </label>
-                        <br />
-                        <label>
-                            <input type="text" ref="username" name="username" placeholder="username" />
-                            <input type="password" ref="password" name="password" placeholder="password" />
-                        </label>
-                        <br />
-                        <button><strong><Link to='/login/' className="link">Redirect to Login</Link></strong></button>
-                    </form>
+                    <div className="content-body">
+                        <p><strong>Created a new User with the following credentials:</strong></p>
+                    </div>
+                    <button><strong><Link to='/login/' className="link">Redirect to Login</Link></strong></button>
                 </div>
             </div>
-        );
+         );
     }
 }
 
