@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import icon from '../img/icon.svg';
 import '../css/style.css';
@@ -54,8 +55,10 @@ class Dashboard extends Component {
                     </div>
                     <div className="nav-bar">
                         <ul>
-                            <li><a className="nav-link"><strong>Expenses</strong></a></li>
-                            <li><a className="nav-link">Reports</a></li>
+                            <Link to='/dashboard/' className="link"><li><a className="nav-link"><strong>Dashboard</strong></a></li></Link>
+                            <Link to='/dashboard/' className="link"><li><a className="nav-link"><strong>User</strong></a></li></Link>
+                            <Link to='/signup/' className="link"><li><a className="nav-link"><strong>Expenses</strong></a></li></Link>
+                            <Link to='/signup/' className="link"><li><a className="nav-link"><strong>Reports</strong></a></li></Link>
                             <button onClick={this.handleLogout}><strong>Log Out</strong></button>
                         </ul>
                     </div>
@@ -65,7 +68,7 @@ class Dashboard extends Component {
                         <h1><span><strong>Dashboard</strong></span></h1>
                     </div>
                     <div className="content-body">
-                        <p>Track your expenses with Tracker and enjoy life a little more.</p>
+                        <p>Navigate to Expenses or R.</p>
                     </div>
                 </div>
             </div>
