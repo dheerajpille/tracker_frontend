@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 import icon from '../img/icon.svg';
 import '../css/style.css';
@@ -7,6 +7,15 @@ import '../css/style.css';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
+        if (sessionStorage.length === 0) {
+            this.state = {
+                redirect: true
+            };
+        } else {
+            this.state = {
+                redirect: false
+            };
+        }
         this.handleLogout = this.handleLogout.bind(this);
     }
     handleLogout(e) {
@@ -26,10 +35,14 @@ class Dashboard extends Component {
         .then((response) => {
             if (response.status === 200) {
                 sessionStorage.clear();
+                this.setState({redirect: true});
             }
         })
     }
     render() {
+        if (this.state.redirect) {
+            return <Redirect push to='/' />
+        }
         return (
             <div>
                 <div className="header">
@@ -54,8 +67,6 @@ class Dashboard extends Component {
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button><strong><Link to='/login/' className="link">Log in to Tracker</Link></strong></button>
-                    <button><strong><Link to='/signup/' className="link">Sign up for Tracker</Link></strong></button>
                 </div>
             </div>
         );
