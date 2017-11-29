@@ -5,6 +5,30 @@ import icon from '../img/icon.svg';
 import '../css/style.css';
 
 class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+        this.handleLogout = this.handleLogout.bind(this);
+    }
+    handleLogout(e) {
+        e.preventDefault();
+        fetch("https://tracker-backend-heroku.herokuapp.com/o/revoke_token/",
+            {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body:
+                "client_id=iulHMYsNYKc9swHJvJlWvz8WMJWwbWbscF1OuUMr&" +
+                "client_secret=aOOzlyOQZW5GhSa8yQczlgzN9QcHeCDl5QSp7HTp2G587X5Y56jucR7wbblHYkS0dVoqULhAzhYTFhX46YL7aJ29qpCR3vkJOPwAM8ngPuNLsyzSh35wDHXGBNr7ZTDJ&" +
+                "token="+sessionStorage.access_token
+            }
+        )
+        .then((response) => {
+            if (response.status === 200) {
+                sessionStorage.clear();
+            }
+        })
+    }
     render() {
         return (
             <div>
@@ -17,9 +41,9 @@ class Dashboard extends Component {
                     </div>
                     <div className="nav-bar">
                         <ul>
-                            <li><a className="nav-link">Expenses</a></li>
+                            <li><a className="nav-link"><strong>Expenses</strong></a></li>
                             <li><a className="nav-link">Reports</a></li>
-                            <button><strong></strong></button>
+                            <button onClick={this.handleLogout}><strong>Log Out</strong></button>
                         </ul>
                     </div>
                 </div>

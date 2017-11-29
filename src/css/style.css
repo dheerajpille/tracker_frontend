@@ -69,14 +69,6 @@ li {
     display: inline-block;
 }
 
-a {
-    transition: 0.25s;
-}
-
-a:hover {
-    background-color: yellow;
-}
-
 .icon {
     display: inline-block;
 }
