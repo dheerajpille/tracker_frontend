@@ -59,6 +59,24 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 10em #F4F5FA inset !important;
 }
 
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 1.25em;
+    padding: 1em;
+    display: inline-block;
+}
+
+a {
+    transition: 0.25s;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
 .icon {
     display: inline-block;
 }
@@ -93,4 +111,10 @@ input:-webkit-autofill {
 
 .redirect-content {
     font-size: 0.875em;
+}
+
+.nav-bar {
+    padding-top: 1em;
+    display: inline-block;
+    float: right;
 }

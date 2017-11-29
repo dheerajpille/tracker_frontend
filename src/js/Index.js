@@ -23,8 +23,8 @@ class Index extends Component {
                     <div className="content-body">
                         <p>Track your expenses with Tracker and enjoy life a little more.</p>
                     </div>
-                    <button><strong><Link to='/login/' className="link">Log in to Tracker</Link></strong></button>
-                    <button><strong><Link to='/signup/' className="link">Sign up for Tracker</Link></strong></button>
+                    <Link to='/login/' className="link"><button><strong>Log in to Tracker</strong></button></Link>
+                    <Link to='/signup/' className="link"><button><strong>Sign up for Tracker</strong></button></Link>
                 </div>
             </div>
         );

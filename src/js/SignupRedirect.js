@@ -28,7 +28,7 @@ class SignupRedirect extends Component {
                         <p><strong>username: </strong>{sessionStorage['username']}</p>
                         <p><strong>email: </strong>{sessionStorage['email']}</p>
                     </div>
-                    <button><strong><Link to='/login/' className="link">Redirect to Login</Link></strong></button>
+                    <Link to='/login/' className="link"><button><strong>Redirect to Login</strong></button></Link>
                 </div>
             </div>
          );
