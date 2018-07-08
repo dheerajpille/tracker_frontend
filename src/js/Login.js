@@ -38,13 +38,15 @@ class Login extends Component {
             return response.json();
         })
         .then(function(data) {
-            if (data.username !== undefined || data.password !== undefined) {
+            if (data.id !== undefined || data.username !== undefined || data.password !== undefined) {
                 // TODO: check for errors
+                console.log(data.id);
                 console.log(data.username);
                 console.log(data.password);
             } else {
                 console.log(data.non_field_errors);
             }
+            sessionStorage['id'] = data.id;
         });
         fetch("https://tracker-backend-heroku.herokuapp.com/o/token/",
             {

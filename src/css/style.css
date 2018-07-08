@@ -124,5 +124,11 @@ li {
 .nav-bar {
     padding-top: 1em;
     display: inline-block;
+}
+
+.log-out {
+    display: inline-block;
     float: right;
+    position: relative;
+    margin-top: 1em;
 }

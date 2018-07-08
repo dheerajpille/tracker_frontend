@@ -17,7 +17,31 @@ class Dashboard extends Component {
                 redirect: false
             };
         }
+        this.handleExpense = this.handleExpense.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+    }
+    handleExpense(e) {
+        e.preventDefault();
+        fetch("https://tracker-backend-heroku.herokuapp.com/tracker/user/"+sessionStorage['id']+"/expense/create/",
+            {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + sessionStorage['access_token']
+                },
+                body: JSON.stringify({
+                    "category": this.refs.category.value,
+                    "type": this.refs.type.value,
+                    "value": this.refs.value.value
+                })
+            }
+        )
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        });
     }
     handleLogout(e) {
         e.preventDefault();
@@ -59,17 +83,26 @@ class Dashboard extends Component {
                             <Link to='/dashboard/' className="link"><li><a className="nav-link"><strong>User</strong></a></li></Link>
                             <Link to='/signup/' className="link"><li><a className="nav-link"><strong>Expenses</strong></a></li></Link>
                             <Link to='/signup/' className="link"><li><a className="nav-link"><strong>Reports</strong></a></li></Link>
-                            <button onClick={this.handleLogout}><strong>Log Out</strong></button>
                         </ul>
                     </div>
+                    <button className="log-out" onClick={this.handleLogout}><strong>Log Out</strong></button>
                 </div>
                 <div className="content">
                     <div className="content-title">
                         <h1><span><strong>Dashboard</strong></span></h1>
                     </div>
                     <div className="content-body">
-                        <p>Navigate to Expenses or R.</p>
+                        <p>Insert an expense below.</p>
                     </div>
+                    <form onSubmit={this.handleExpense}>
+                        <label>
+                            <input type="text" ref="category" name="category" placeholder="category" />
+                            <input type="text" ref="type" name="type" placeholder="type" />
+                            <input type="number" ref="value" name="value" placeholder="value" step="0.01" />
+                        </label>
+                        <br />
+                        <button type="submit"><strong>Create Expense</strong></button>
+                    </form>
                 </div>
             </div>
         );
